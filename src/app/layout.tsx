@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import "../ui/globals.css";
 import { geistSans, vazir } from "@/ui/fonts";
+import { AppRouterCacheProvider } from "@mui/material-nextjs/v15-appRouter";
+import ThemeProvider from "@/provider/theme-provider";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -13,9 +15,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html dir="rtl">
       <body className={`${vazir.variable} ${geistSans.variable}`}>
-        {children}
+        <AppRouterCacheProvider>
+          <ThemeProvider>{children}</ThemeProvider>
+        </AppRouterCacheProvider>
       </body>
     </html>
   );
