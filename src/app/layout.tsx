@@ -1,8 +1,9 @@
 import type { Metadata } from "next";
-import "../ui/globals.css";
 import { geistSans, vazir } from "@/ui/fonts";
 import { AppRouterCacheProvider } from "@mui/material-nextjs/v15-appRouter";
 import ThemeProvider from "@/provider/theme-provider";
+import "@/ui/globals.css";
+import StoreProvider from "@/provider/store-provider";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -18,7 +19,9 @@ export default function RootLayout({
     <html dir="rtl">
       <body className={`${vazir.variable} ${geistSans.variable}`}>
         <AppRouterCacheProvider>
-          <ThemeProvider>{children}</ThemeProvider>
+          <ThemeProvider>
+            <StoreProvider>{children}</StoreProvider>
+          </ThemeProvider>
         </AppRouterCacheProvider>
       </body>
     </html>
