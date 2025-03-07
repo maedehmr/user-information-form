@@ -1,8 +1,11 @@
 import { configureStore } from "@reduxjs/toolkit";
+import userInfoReducer from "./slices/user-info-slice";
 
 export const makeStore = () => {
   return configureStore({
-    reducer: {},
+    reducer: {
+      form: userInfoReducer,
+    },
   });
 };
 

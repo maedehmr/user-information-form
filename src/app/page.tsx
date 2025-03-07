@@ -1,7 +1,7 @@
 export default function Home() {
   return (
     <>
-    m
+      <h1>user info</h1>
     </>
   );
 }
