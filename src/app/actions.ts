@@ -11,6 +11,8 @@ webpush.setVapidDetails(
 let subscription: webpush.PushSubscription | null = null;
 
 export async function subscribeUser(sub: PushSubscription) {
+  console.log("Subscription object:", sub);
+
   subscription = {
     endpoint: sub.endpoint,
     keys: {
