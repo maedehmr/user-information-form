@@ -11,8 +11,6 @@ webpush.setVapidDetails(
 let subscription: webpush.PushSubscription | null = null;
 
 export async function subscribeUser(sub: PushSubscription) {
-  console.log("Subscription object:", sub);
-
   subscription = {
     endpoint: sub.endpoint,
     keys: {
@@ -51,7 +49,7 @@ export async function sendNotification(message: string) {
       JSON.stringify({
         title: "Test Notification",
         body: message,
-        icon: "/icon.png",
+        icon: "/favicons/web-app-manifest-1",
       })
     );
     return { success: true };
