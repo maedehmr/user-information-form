@@ -3,7 +3,7 @@ import type { MetadataRoute } from "next";
 export default function manifest(): MetadataRoute.Manifest {
   return {
     name: "User Info Form PWA",
-    short_name: "UserInfoFormPWA",
+    short_name: "FormPWA",
     description: "A Progressive Web App built with Next.js",
     start_url: "/",
     display: "standalone",
