@@ -6,6 +6,7 @@ import {
   unsubscribeUser,
 } from "@/app/actions";
 import { urlBase64ToUint8Array } from "@/utils/base64-to-uint8";
+import { Box, Button, Typography } from "@mui/material";
 import { useState, useEffect } from "react";
 
 function PushNotificationManager() {
@@ -56,25 +57,35 @@ function PushNotificationManager() {
   }
 
   if (!isSupported) {
-    return <p>Push notifications are not supported in this browser.</p>;
+    return (
+      <Typography variant="body1">
+        Push notifications are not supported in this browser.
+      </Typography>
+    );
   }
 
   return (
-    <div>
-      <h3>Push Notifications</h3>
+    <Box sx={{ mb: 2 }}>
+      <Typography variant="h4">Push Notifications</Typography>
       {subscription ? (
         <>
-          <p>You are subscribed to push notifications.</p>
-          <button onClick={unsubscribeFromPush}>Unsubscribe</button>
-          <button onClick={sendTestNotification}>Send Test</button>
+          <Typography variant="body1">
+            You are subscribed to push notifications.
+          </Typography>
+          <Box display="flex" gap={1}>
+            <Button onClick={unsubscribeFromPush}>Unsubscribe</Button>
+            <Button onClick={sendTestNotification}>Send Test</Button>
+          </Box>
         </>
       ) : (
         <>
-          <p>You are not subscribed to push notifications.</p>
-          <button onClick={subscribeToPush}>Subscribe</button>
+          <Typography variant="body1">
+            You are not subscribed to push notifications.
+          </Typography>
+          <Button onClick={subscribeToPush}>Subscribe</Button>
         </>
       )}
-    </div>
+    </Box>
   );
 }
 

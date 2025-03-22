@@ -2,8 +2,9 @@ import type { Metadata } from "next";
 import { geistSans, vazir } from "@/ui/fonts";
 import { AppRouterCacheProvider } from "@mui/material-nextjs/v15-appRouter";
 import ThemeProvider from "@/provider/theme-provider";
-import "@/ui/globals.css";
 import StoreProvider from "@/provider/store-provider";
+import "@/ui/globals.css";
+import MainLayout from "@/components/layout/main-layout/main-layout";
 
 export const metadata: Metadata = {
   title: "User Info Form",
@@ -20,7 +21,9 @@ export default function RootLayout({
       <body className={`${vazir.variable} ${geistSans.variable}`}>
         <AppRouterCacheProvider>
           <ThemeProvider>
-            <StoreProvider>{children}</StoreProvider>
+            <StoreProvider>
+              <MainLayout>{children}</MainLayout>
+            </StoreProvider>
           </ThemeProvider>
         </AppRouterCacheProvider>
       </body>

@@ -1,5 +1,6 @@
 "use client";
 
+import { Box, Button, Typography } from "@mui/material";
 import { useState, useEffect } from "react";
 
 function InstallPrompt() {
@@ -19,25 +20,25 @@ function InstallPrompt() {
   }
 
   return (
-    <div>
-      <h3>Install App</h3>
-      <button>Add to Home Screen</button>
+    <Box>
+      <Typography variant="h4">Install App</Typography>
+      <Button>Add to Home Screen</Button>
       {isIOS && (
-        <p>
+        <Typography variant="body1">
           To install this app on your iOS device, tap the share button
-          <span role="img" aria-label="share icon">
+          <Typography component="span" role="img" aria-label="share icon">
             {" "}
             ⎋{" "}
-          </span>
+          </Typography>
           and then Add to Home Screen
-          <span role="img" aria-label="plus icon">
+          <Typography component="span" role="img" aria-label="plus icon">
             {" "}
             ➕{" "}
-          </span>
+          </Typography>
           .
-        </p>
+        </Typography>
       )}
-    </div>
+    </Box>
   );
 }
 

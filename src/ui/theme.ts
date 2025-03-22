@@ -8,6 +8,13 @@ const theme = createTheme({
   typography: {
     fontFamily: "var(--font-vazir)",
   },
+  components: {
+    MuiButton: {
+      defaultProps: {
+        variant: "contained",
+      },
+    },
+  },
 });
 
 export default theme;
