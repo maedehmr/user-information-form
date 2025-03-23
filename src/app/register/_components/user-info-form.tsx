@@ -1,7 +1,9 @@
 "use client";
 
+import DatePicker from "@/components/custom/date-picker/date-picker";
 import {
   Box,
+  Button,
   FormControl,
   FormControlLabel,
   FormLabel,
@@ -27,15 +29,15 @@ const UserInfoForm = () => {
       <Box component="form">
         <Grid2 container spacing={2}>
           <Grid2 size={{ xs: 12, md: 6 }}>
-            <TextField label="Outlined" variant="outlined" fullWidth />
+            <TextField label="firstName" variant="outlined" fullWidth />
           </Grid2>
           <Grid2 size={{ xs: 12, md: 6 }}>
-            <TextField label="Outlined" variant="outlined" fullWidth />
+            <TextField label="lastName" variant="outlined" fullWidth />
           </Grid2>
           <Grid2 size={{ xs: 12, md: 6 }}>
             <FormControl>
               <FormLabel id="demo-row-radio-buttons-group-label">
-                Gender
+                gender
               </FormLabel>
               <RadioGroup
                 row
@@ -56,7 +58,7 @@ const UserInfoForm = () => {
             </FormControl>
           </Grid2>
           <Grid2 size={{ xs: 12, md: 6 }}>
-            <TextField label="Outlined" variant="outlined" fullWidth />
+            <DatePicker label="birthDate" onChange={() => {}} value={null} />
           </Grid2>
           <Grid2 size={{ xs: 12, md: 6 }}>
             <FormControl fullWidth>
@@ -86,6 +88,9 @@ const UserInfoForm = () => {
           </Grid2>
         </Grid2>
       </Box>
+      <Button sx={{ mt: 2.8 }} type="submit">
+        ثبت اطلاعات
+      </Button>
     </>
   );
 };
