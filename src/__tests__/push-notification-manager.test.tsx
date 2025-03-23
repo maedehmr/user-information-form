@@ -1,10 +1,10 @@
 import { render, screen, fireEvent, waitFor } from "@testing-library/react";
-import PushNotificationManager from "@/app/(home)/_components/push-notification-manager/push-notification-manager";
+import PushNotificationManager from "@/app/[locale]/(home)/_components/push-notification-manager/push-notification-manager";
 import {
   subscribeUser,
   unsubscribeUser,
   sendNotification,
-} from "@/app/actions";
+} from "@/app/[locale]/actions";
 import { urlBase64ToUint8Array } from "@/utils/base64-to-uint8";
 
 // Mocking the necessary functions

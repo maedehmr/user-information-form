@@ -3,7 +3,7 @@ import {
   subscribeUser,
   unsubscribeUser,
   sendNotification,
-} from "@/app/actions";
+} from "@/app/[locale]/actions";
 
 type MockPushSubscription = {
   endpoint: string;

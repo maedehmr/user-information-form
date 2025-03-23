@@ -4,7 +4,7 @@ import {
   sendNotification,
   subscribeUser,
   unsubscribeUser,
-} from "@/app/actions";
+} from "@/app/[locale]/actions";
 import { urlBase64ToUint8Array } from "@/utils/base64-to-uint8";
 import { Box, Button, Typography } from "@mui/material";
 import { useState, useEffect } from "react";
