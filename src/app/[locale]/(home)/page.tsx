@@ -2,13 +2,18 @@ import PushNotificationManager from "./_components/push-notification-manager/pus
 import InstallPrompt from "./_components/install-prompt/install-prompt";
 import { Button } from "@mui/material";
 import Link from "next/link";
+import { useTranslations } from "next-intl";
 
 export default function Page() {
+  const t = useTranslations();
+
   return (
     <>
-      <PushNotificationManager />
+      {/* <PushNotificationManager /> */}
       {/* <InstallPrompt /> */}
-      <Button href="/register" component={Link} >Register Form</Button>
+      <Button href="/register" component={Link}>
+        {t("userInfoForm")}
+      </Button>
     </>
   );
 }
