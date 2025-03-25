@@ -1,4 +1,4 @@
-import UserInfoForm from "./_components/user-info-form";
+import { UserInfoForm } from "./_components";
 
 export default function RegisterPage() {
   return <UserInfoForm />;

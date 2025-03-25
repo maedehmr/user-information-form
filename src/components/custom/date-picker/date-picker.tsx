@@ -6,6 +6,7 @@ import persian_fa from "react-date-object/locales/persian_fa";
 import DateObject from "react-date-object";
 import type { Value } from "react-multi-date-picker";
 import { Box, TextField } from "@mui/material";
+import { ReactNode } from "react";
 
 interface DatePickerProps {
   label: string;
@@ -14,6 +15,9 @@ interface DatePickerProps {
   minDate?: Value;
   maxDate?: Value;
   disabled?: boolean;
+  helperText?: ReactNode;
+  error?: boolean;
+  required?: boolean;
 }
 
 const DatePicker: React.FC<DatePickerProps> = ({
@@ -23,6 +27,9 @@ const DatePicker: React.FC<DatePickerProps> = ({
   maxDate,
   disabled = false,
   label,
+  helperText,
+  error,
+  required,
 }) => {
   const handleDatePicker = (date: any) => {
     onChange(date);
@@ -49,11 +56,10 @@ const DatePicker: React.FC<DatePickerProps> = ({
         render={(value, openCalendar) => {
           return (
             <TextField
-              label={label}
-              value={value}
               onFocus={openCalendar}
               onChange={handleDatePicker}
               fullWidth
+              {...{ helperText, label, value, error, required }}
             />
           );
         }}

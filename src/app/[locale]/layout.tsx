@@ -3,11 +3,11 @@ import { geistSans, vazir } from "@/ui/fonts";
 import { AppRouterCacheProvider } from "@mui/material-nextjs/v15-appRouter";
 import ThemeProvider from "@/provider/theme-provider";
 import StoreProvider from "@/provider/store-provider";
-import MainLayout from "@/components/layout/main-layout/main-layout";
 import { NextIntlClientProvider, hasLocale } from "next-intl";
 import { notFound } from "next/navigation";
 import { routing } from "@/i18n/routing";
 import "@/ui/globals.css";
+import { MainLayout } from "@/components/layout";
 
 export const metadata: Metadata = {
   title: "User Info Form",

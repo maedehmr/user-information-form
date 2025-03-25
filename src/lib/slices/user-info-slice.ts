@@ -1,10 +1,10 @@
 import { UserInfoState } from "@/ts/types/user-info";
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 
-const initialState: UserInfoState = {
+export const UserInfoInitialState: UserInfoState = {
   firstName: "",
   lastName: "",
-  birthDate: "",
+  birthDate: 0,
   gender: "",
   placeOfBirth: "",
   address: "",
@@ -13,7 +13,7 @@ const initialState: UserInfoState = {
 
 const userInfoSlice = createSlice({
   name: "user-info",
-  initialState,
+  initialState: UserInfoInitialState,
   reducers: {
     setUserInfo: (state, action: PayloadAction<UserInfoState>) => {
       state = action.payload;
