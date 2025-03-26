@@ -1,6 +1,9 @@
 "use client";
 
-import { UserInfoInitialState } from "@/lib/slices/user-info-slice";
+import {
+  setUserInfo,
+  UserInfoInitialState,
+} from "@/lib/slices/user-info-slice";
 import { UserInfoState } from "@/ts/types/user-info";
 import { Box, Button, Typography } from "@mui/material";
 import { SubmitHandler, useForm } from "react-hook-form";
@@ -8,9 +11,13 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { userInfoSchema } from "@/schemas/user-info-schema";
 import UserInfoFormItems from "../user-info-form-items/user-info-form-items";
 import { useTranslations } from "next-intl";
+import { useAppDispatch } from "@/lib/hooks";
+import { useRouter } from "next/navigation";
 
 const UserInfoForm = () => {
   const t = useTranslations();
+  const dispatch = useAppDispatch();
+  const router = useRouter();
   const {
     control,
     handleSubmit,
@@ -21,7 +28,8 @@ const UserInfoForm = () => {
   });
 
   const onSubmit: SubmitHandler<UserInfoState> = (data) => {
-    console.log(data);
+    dispatch(setUserInfo(data));
+    router.push("/profile");
   };
 
   return (

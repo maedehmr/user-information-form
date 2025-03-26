@@ -4,7 +4,7 @@ import userInfoReducer from "./slices/user-info-slice";
 export const makeStore = () => {
   return configureStore({
     reducer: {
-      form: userInfoReducer,
+      userInfo: userInfoReducer,
     },
   });
 };

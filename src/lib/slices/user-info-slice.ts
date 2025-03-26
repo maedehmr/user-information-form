@@ -16,7 +16,7 @@ const userInfoSlice = createSlice({
   initialState: UserInfoInitialState,
   reducers: {
     setUserInfo: (state, action: PayloadAction<UserInfoState>) => {
-      state = action.payload;
+      return { ...state, ...action.payload };
     },
   },
 });
