@@ -7,8 +7,10 @@ import { SubmitHandler, useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { userInfoSchema } from "@/schemas/user-info-schema";
 import UserInfoFormItems from "../user-info-form-items/user-info-form-items";
+import { useTranslations } from "next-intl";
 
 const UserInfoForm = () => {
+  const t = useTranslations();
   const {
     control,
     handleSubmit,
@@ -28,12 +30,12 @@ const UserInfoForm = () => {
         variant="h1"
         sx={{ fontSize: "1.6rem", fontWeight: 500, mb: 2.8 }}
       >
-        فرم اطلاعات کاربری
+        {t("userInfoForm")}
       </Typography>
       <Box component="form" onSubmit={handleSubmit(onSubmit)} noValidate>
         <UserInfoFormItems control={control} errors={errors} />
         <Button sx={{ mt: 2.8 }} type="submit">
-          ثبت اطلاعات
+          {t("submit")}
         </Button>
       </Box>
     </>

@@ -1,0 +1,16 @@
+{
+  "userInfoForm": "User Info Form",
+  "submit": "Submit",
+  "firstName": "First Name",
+  "lastName": "Last Name",
+  "gender": "Gender",
+  "birthDate": "Birth Date",
+  "placeOfBirth": "Place of Birth",
+  "postalCode": "Postal Code",
+  "address": "Address",
+  "female": "Female",
+  "male": "Male",
+  "tehran": "Tehran",
+  "mashhad": "Mashhad",
+  "shiraz": "Shiraz"
+}

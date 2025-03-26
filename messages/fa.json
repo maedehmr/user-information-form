@@ -1,3 +1,16 @@
 {
-  "userInfoForm": "فرم اطلاعات کاربری"
+  "userInfoForm": "فرم اطلاعات کاربری",
+  "submit": "ثبت اطلاعات",
+  "firstName": "نام",
+  "lastName": "نام خانوادگی",
+  "gender": "جنسیت",
+  "birthDate": "تاریخ تولد",
+  "placeOfBirth": "محل تولد",
+  "postalCode": "کد پستی",
+  "address": "آدرس",
+  "female": "زن",
+  "male": "مرد",
+  "tehran": "تهران",
+  "mashhad": "مشهد",
+  "shiraz": "شیراز"
 }
