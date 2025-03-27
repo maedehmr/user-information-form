@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import { geistSans, vazir } from "@/ui/fonts";
-import { AppRouterCacheProvider } from "@mui/material-nextjs/v15-appRouter";
 import ThemeProvider from "@/provider/theme-provider";
 import StoreProvider from "@/provider/store-provider";
 import { NextIntlClientProvider, hasLocale } from "next-intl";
@@ -35,15 +34,13 @@ export default async function RootLayout({
   return (
     <html dir="rtl" lang={locale}>
       <body className={`${vazir.variable} ${geistSans.variable}`}>
-        <AppRouterCacheProvider>
-          <ThemeProvider>
-            <StoreProvider>
-              <NextIntlClientProvider>
-                <MainLayout>{children}</MainLayout>
-              </NextIntlClientProvider>
-            </StoreProvider>
-          </ThemeProvider>
-        </AppRouterCacheProvider>
+        <ThemeProvider>
+          <StoreProvider>
+            <NextIntlClientProvider>
+              <MainLayout>{children}</MainLayout>
+            </NextIntlClientProvider>
+          </StoreProvider>
+        </ThemeProvider>
       </body>
     </html>
   );
