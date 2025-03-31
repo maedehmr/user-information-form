@@ -1,5 +1,5 @@
 import { render, screen, fireEvent, waitFor } from "@testing-library/react";
-import PushNotificationManager from "@/app/[locale]/(home)/_components/push-notification-manager/push-notification-manager";
+import PushNotificationManager from "@/app/[locale]/profile/_components/push-notification-manager/push-notification-manager";
 import {
   subscribeUser,
   unsubscribeUser,

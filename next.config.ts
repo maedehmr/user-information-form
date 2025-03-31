@@ -22,7 +22,7 @@ const nextConfig: NextConfig = {
         ],
       },
       {
-        source: "/sw.js",
+        source: "/service-worker.js",
         headers: [
           {
             key: "Content-Type",
