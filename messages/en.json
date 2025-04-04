@@ -12,5 +12,11 @@
   "male": "Male",
   "tehran": "Tehran",
   "mashhad": "Mashhad",
-  "shiraz": "Shiraz"
+  "shiraz": "Shiraz",
+  "heroSection": {
+    "subtext": "A BETTER WAY TO SUBMIT YOUR INFORMATION",
+    "headline": "Secure Your Info, Simplify",
+    "keyword": "Your Form",
+    "button": "Fill Now"
+  }
 }

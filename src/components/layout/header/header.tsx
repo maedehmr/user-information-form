@@ -1,7 +1,7 @@
 "use client";
 
 import {
-  Container,
+  Box,
   FormControl,
   MenuItem,
   Select,
@@ -21,14 +21,22 @@ const Header = () => {
   };
 
   return (
-    <Container sx={{ display: "flex", alignItems: "center", height: "5rem" }}>
-      <FormControl sx={{ width: "6rem" }}>
+    <Box
+      sx={{
+        display: "flex",
+        alignItems: "center",
+        height: "5rem",
+        position: "relative",
+        zIndex: "2",
+      }}
+    >
+      <FormControl sx={{ width: "5rem" }}>
         <Select value={locale} onChange={handleChange}>
           <MenuItem value="fa">FA</MenuItem>
           <MenuItem value="en">EN</MenuItem>
         </Select>
       </FormControl>
-    </Container>
+    </Box>
   );
 };
 

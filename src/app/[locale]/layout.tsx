@@ -6,7 +6,7 @@ import { NextIntlClientProvider, hasLocale } from "next-intl";
 import { notFound } from "next/navigation";
 import { routing } from "@/i18n/routing";
 import "@/ui/globals.css";
-import { Header } from "@/components/layout";
+import { Header, MainLayout } from "@/components/layout";
 
 export const metadata: Metadata = {
   title: "User Info Form",
@@ -37,8 +37,10 @@ export default async function RootLayout({
         <ThemeProvider>
           <StoreProvider>
             <NextIntlClientProvider>
-              <Header />
-              {children}
+              <MainLayout>
+                <Header />
+                {children}
+              </MainLayout>
             </NextIntlClientProvider>
           </StoreProvider>
         </ThemeProvider>

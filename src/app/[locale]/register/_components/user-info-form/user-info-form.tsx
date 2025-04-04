@@ -36,7 +36,7 @@ const UserInfoForm = () => {
     <>
       <Typography
         variant="h1"
-        sx={{ fontSize: "1.6rem", fontWeight: 500, mb: 2.8 }}
+        sx={{ fontSize: "1.6rem", fontWeight: 500, my: 2.8 }}
       >
         {t("userInfoForm")}
       </Typography>
