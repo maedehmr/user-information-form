@@ -1,4 +1,5 @@
 "use client";
+
 import { Box, Button, Grid2, Typography } from "@mui/material";
 import { useTranslations } from "next-intl";
 import Image from "next/image";
@@ -26,7 +27,15 @@ const HeroSection = () => {
         // style={{ left: "46%", right: "unset", top: "25%" }}
       />
       <Grid2 container sx={{ zIndex: "1", position: "relative" }}>
-        <Grid2 size={{ xs: 12, md: 7 }} sx={{ marginTop: "5rem" }}>
+        <Grid2
+          size={{ xs: 12, md: 7 }}
+          sx={{
+            marginTop: {
+              xs: "1rem",
+              md: "3rem",
+            },
+          }}
+        >
           <Typography
             sx={{ fontWeight: "500", color: "primary.dark" }}
             variant="body1"
@@ -36,10 +45,24 @@ const HeroSection = () => {
           <Typography
             variant="h1"
             sx={{
+              marginTop: ".8rem",
+              display: {
+                xs: "flex",
+                lg: "block",
+              },
+              flexWrap: "wrap",
               fontWeight: "700",
               color: "common.black",
-              fontSize: "4rem",
-              lineHeight: "6rem",
+              fontSize: {
+                xs: "2rem",
+                md: "3rem",
+                lg: "4rem",
+              },
+              lineHeight: {
+                xs: "3rem",
+                md: "4rem",
+                lg: "6rem",
+              },
             }}
           >
             {t("headline")}
@@ -49,7 +72,10 @@ const HeroSection = () => {
                 fontSize: "inherit",
                 fontWeight: "900",
                 color: "common.white",
-                margin: "0 1rem",
+                margin: {
+                  xs: "0",
+                  sm: "0 .8rem",
+                },
                 padding: "0 2.5rem",
                 borderRadius: "4rem",
                 backgroundImage: (theme) =>
@@ -61,7 +87,10 @@ const HeroSection = () => {
           </Typography>
           <Typography
             sx={{
-              width: "60%",
+              width: {
+                xs: "100%",
+                lg: "60%",
+              },
               color: "common.black",
               marginTop: "1.4rem",
               lineHeight: "1.8rem",
@@ -83,6 +112,11 @@ const HeroSection = () => {
             alt="creative-girl"
             width={654}
             height={654}
+            sizes="100vw"
+            style={{
+              width: "100%",
+              height: "auto",
+            }}
           />
         </Grid2>
       </Grid2>

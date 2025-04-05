@@ -42,7 +42,7 @@ const UserInfoForm = () => {
       </Typography>
       <Box component="form" onSubmit={handleSubmit(onSubmit)} noValidate>
         <UserInfoFormItems control={control} errors={errors} />
-        <Button sx={{ mt: 2.8 }} type="submit">
+        <Button sx={{ my: 2.8 }} type="submit">
           {t("submit")}
         </Button>
       </Box>
