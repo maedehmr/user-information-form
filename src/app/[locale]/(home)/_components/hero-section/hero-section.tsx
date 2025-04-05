@@ -17,15 +17,15 @@ const HeroSection = () => {
         src="/images/pink-shadow.svg"
         fill
         alt="pink-shadow"
-        style={{ right: "30%" }}
+        // style={{ right: "30%" }}
       />
       <Image
         src="/images/blue-shadow.svg"
         fill
         alt="blue-shadow"
-        style={{ left: "46%", right: "unset", top: "25%" }}
+        // style={{ left: "46%", right: "unset", top: "25%" }}
       />
-      <Grid2 container sx={{ zIndex: "1", position: "absolute" }}>
+      <Grid2 container sx={{ zIndex: "1", position: "relative" }}>
         <Grid2 size={{ xs: 12, md: 7 }} sx={{ marginTop: "5rem" }}>
           <Typography
             sx={{ fontWeight: "500", color: "primary.dark" }}
