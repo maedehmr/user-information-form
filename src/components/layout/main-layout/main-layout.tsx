@@ -8,7 +8,11 @@ interface MainLayoutProps {
 }
 
 const MainLayout: React.FC<MainLayoutProps> = ({ children }) => {
-  return <Container component="main">{children}</Container>;
+  return (
+    <Container component="main" sx={{ mb: "3rem" }}>
+      {children}
+    </Container>
+  );
 };
 
 export default MainLayout;

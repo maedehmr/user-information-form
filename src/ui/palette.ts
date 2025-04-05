@@ -7,6 +7,10 @@ const palette: PaletteOptions = {
     main: blue[500],
     dark: blue[700],
   },
+  common: {
+    white: "#FFFFFF",
+    black: "#121E49",
+  },
 };
 
 export default palette;

@@ -15,6 +15,22 @@ const theme = createTheme({
       defaultProps: {
         variant: "contained",
       },
+      styleOverrides: {
+        root: ({ theme }) => ({
+          variants: [
+            {
+              props: { variant: "contained" },
+              style: {
+                background: theme.palette.common.white,
+                color: theme.palette.primary.main,
+                borderRadius: "3rem",
+                padding: "1rem 3rem",
+                fontSize: "1.1rem",
+              },
+            },
+          ],
+        }),
+      },
     },
   },
 });
