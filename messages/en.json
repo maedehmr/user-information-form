@@ -19,5 +19,12 @@
     "keyword": "Your Form",
     "button": "Fill Now",
     "description": "A User Info Form is used to collect essential personal or business details for various purposes."
+  },
+  "validation": {
+    "default": "this field",
+    "required": "is required",
+    "min": "must be at least",
+    "length": "must be exactly",
+    "onlyNumber": "must contain only numbers"
   }
 }

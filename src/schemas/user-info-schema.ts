@@ -1,14 +1,23 @@
-import { validation } from "@/utils/validation";
+"use client";
+
+import { useTranslations } from "next-intl";
+import { createValidation } from "@/utils/validation";
 import { z } from "zod";
 
-export const userInfoSchema = z.object({
-  firstName: validation.stringRequired("First Name"),
-  lastName: validation.stringRequired("Last Name"),
-  birthDate: validation.numberRequired("Birth Date"),
-  gender: validation.stringRequired("Gender"),
-  placeOfBirth: validation.stringRequired("Place of Birth"),
-  address: validation.stringRequired("Address"),
-  postalCode: validation.localizedNumberRequired("Postal Code", 10),
-});
+export function useUserInfoSchema() {
+  const tValidation = useTranslations("validation");
+  const t = useTranslations();
+  const validation = createValidation(tValidation);
 
-export type UserInfoSchemaType = z.infer<typeof userInfoSchema>;
+  const userInfoSchema = z.object({
+    firstName: validation.stringRequired(t("firstName")),
+    lastName: validation.stringRequired(t("lastName")),
+    birthDate: validation.numberRequired(t("birthDate")),
+    gender: validation.stringRequired(t("gender")),
+    placeOfBirth: validation.stringRequired(t("placeOfBirth")),
+    address: validation.stringRequired(t("address")),
+    postalCode: validation.localizedNumberRequired(t("postalCode"), 10),
+  });
+
+  return userInfoSchema;
+}

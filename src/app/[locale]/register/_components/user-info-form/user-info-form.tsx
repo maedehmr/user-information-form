@@ -8,23 +8,24 @@ import { UserInfoState } from "@/ts/types/user-info";
 import { Box, Button, Typography } from "@mui/material";
 import { SubmitHandler, useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { userInfoSchema } from "@/schemas/user-info-schema";
 import UserInfoFormItems from "../user-info-form-items/user-info-form-items";
 import { useTranslations } from "next-intl";
 import { useAppDispatch } from "@/lib/hooks";
 import { useRouter } from "next/navigation";
+import { useUserInfoSchema } from "@/schemas/user-info-schema";
 
 const UserInfoForm = () => {
   const t = useTranslations();
   const dispatch = useAppDispatch();
   const router = useRouter();
+  const schema = useUserInfoSchema();
   const {
     control,
     handleSubmit,
     formState: { errors },
   } = useForm({
     defaultValues: UserInfoInitialState,
-    resolver: zodResolver(userInfoSchema),
+    resolver: zodResolver(schema),
   });
 
   const onSubmit: SubmitHandler<UserInfoState> = (data) => {
