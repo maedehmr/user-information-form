@@ -26,15 +26,16 @@ export default async function RootLayout({
   params,
 }: RootLayoutProps) {
   const { locale } = await params;
+  console.log("🚀 ~ locale:", locale);
 
   if (!hasLocale(routing.locales, locale)) {
     notFound();
   }
 
   return (
-    <html dir="rtl" lang={locale}>
+    <html dir={locale === "fa" ? "rtl" : "ltr"} lang={locale}>
       <body className={`${vazir.variable} ${geistSans.variable}`}>
-        <ThemeProvider>
+        <ThemeProvider {...{ locale }}>
           <StoreProvider>
             <NextIntlClientProvider>
               <MainLayout>
